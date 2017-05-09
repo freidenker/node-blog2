@@ -1,0 +1,45 @@
+<template name="index">
+  <!--
+  <div class="hero-unit">
+    <h1>welcome to weibo</h1>
+    <p>weibo is blog system base on Meteor</p>
+    <p>
+      <a class="btn btn-primary btn-large" href="/login">Login</a>
+      <a class="btn btn-large" href="/reg">Register</a>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <h2>winter says</h2>
+      <p>here is deutschland !</p>
+    </div>
+    <div class="span4">
+      <h2>carina says</h2>
+      <p>ich bin deutsche<br>
+      winter ist mein Freund.<br>
+      ich liebe ihn sehr.<br>
+      so wunderbar.
+      </p>
+    </div>
+    <div class="span4">
+      <h2>Wilde says</h2>
+      <p>Always forgive your enemies; nothing annoys them so much.</p>
+    </div>
+
+  </div>
+-->
+{{#if currentUser}}
+  <form class="well form-inline center" style="text-align: center;">
+    <input type="text" class="span8" id="post">
+      <button id="submit" class="btn btn-success"><i class="icon-comment icon-white"></i>发表</button>
+  </form>
+{{/if}}
+
+  {{#each posts}}
+    <h2>{{user.username}}</h2>
+    <p class="muted">{{time}}</p>
+<!--    <p>{{post}}</p> -->
+    <p>{{#markdown}}{{post}}{{/markdown}}</p>
+  {{/each}}
+</template>
